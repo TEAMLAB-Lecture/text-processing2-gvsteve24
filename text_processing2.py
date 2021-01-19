@@ -49,6 +49,9 @@ def to_camel_case(underscore_str):
     underscoring = False
 
     temp = ''
+    if underscore_str.count('_') == 0:
+        return underscore_str
+
     for i in range(len(underscore_str)):
         if not underscoring and underscore_str[i] == '_':
             underscoring = True

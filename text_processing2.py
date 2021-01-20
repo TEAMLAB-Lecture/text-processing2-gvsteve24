@@ -28,6 +28,8 @@ def to_camel_case(underscore_str):
     temp = ''
     if underscore_str.count('_') == 0:
         return underscore_str
+    if not any(elem != '_' for elem in list(underscore_str)):
+        return ''
 
     for i in range(len(underscore_str)):
         if not underscoring and underscore_str[i] == '_':
@@ -42,9 +44,11 @@ def to_camel_case(underscore_str):
 
     return camelcase_str
 
-# underscore_str1 = "to_camel_case"
+# underscore_str1 = "_________"
 # print(to_camel_case(underscore_str1))
 # underscore_str2 = "__EXAMPLE__NAME__"
 # print(to_camel_case(underscore_str2))
 # underscore_str3 = "alreadyCamel"
 # print(to_camel_case(underscore_str3))
+# underscore_str4 = "_camel_case_"
+# print(to_camel_case(underscore_str4))
